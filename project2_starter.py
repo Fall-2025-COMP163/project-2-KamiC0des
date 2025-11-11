@@ -168,7 +168,7 @@ class Warrior(Player):
 
         # Updates and displays stamina
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
 
         
@@ -188,7 +188,7 @@ class Warrior(Player):
 
         # Update and displays stamina
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
 
 class Mage(Player):
@@ -223,7 +223,7 @@ class Mage(Player):
 
         # Update and display stamina
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
         
     def fireball(self, target):
         """
@@ -240,7 +240,7 @@ class Mage(Player):
         target.take_damage(damage)
 
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
 class Rogue(Player):
     """
@@ -278,7 +278,7 @@ class Rogue(Player):
 
         # Update and display stamina
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
         
     def sneak_attack(self, target):
         """
@@ -295,7 +295,7 @@ class Rogue(Player):
         target.take_damage(damage)
 
         self.stamina = max(0, self.stamina - stamina_cost)
-        print(f"{self.names}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+        print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
 
 class Weapon:
