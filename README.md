@@ -14,7 +14,7 @@ Build a simple character system that demonstrates mastery of object-oriented pro
 - Every 100 XP automatically increases the player's level
 - Level-ups also print a celebratory message
 
-## Also, Player subclasses now have stamina:
+### Also, Player subclasses now have stamina:
 
 - Players start with 100 stamina.
 - Each attack brings the stamina down based on the type of attack and the subclass.
