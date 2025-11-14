@@ -363,10 +363,14 @@ if __name__ == "__main__":
     sword = Weapon("Iron Sword", 10)
     staff = Weapon("Magic Staff", 15)
     dagger = Weapon("Steel Dagger", 8)
+    axe = Weapon("Heavy Axe", 12)
+    crossbow = Weapon("Single-Shot Crossbow", 15)
 
     sword.display_info()
     staff.display_info()
     dagger.display_info()
+    axe.display_info()
+    crossbow.display_info()
     
     # TODO: Test the battle system
     print("\n⚔️ Testing Battle System:")
