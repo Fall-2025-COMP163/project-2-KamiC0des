@@ -1,10 +1,10 @@
 """
 COMP 163 - Project 2: Character Abilities Showcase
 Name: Kami Strain
-Date: 11/9
+Date: 11/14
 
-AI Usage: [Document any AI assistance used]
-Example: AI helped with inheritance structure and method overriding concepts
+AI Usage: - Improving stamina logic with attacks
+          - Assisting with debugging method
 """
 
 # ============================================================================
@@ -123,6 +123,20 @@ class Player(Character):
         self.level = 1 # Player level starts at 1
         self.experience = 0 # Player experience starts at 0
         self.stamina = 100 # Player stamina starts at 100 (decreases per attack)
+
+    def gain_experience(self, amount):
+        """
+        Increase player's experience by a certain amount.
+        Automatically handles leveling up every 100 XP.
+        """
+        self.experience += amount
+        print(f"{self.name} gains {amount} XP! (Total XP: {self.experience})")
+        # Level up
+        while self.experience >= 100:
+            self.experience -= 100
+            self.level += 1
+            print(f"🎉 {self.name} leveled up! Now level {self.level}!")
+
         
     def display_stats(self):
         """
@@ -170,6 +184,8 @@ class Warrior(Player):
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
+        # Player gains experience when attacking.
+        self.gain_experience(25)
 
         
     def power_strike(self, target):
@@ -190,6 +206,8 @@ class Warrior(Player):
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
 
+        # Player gains experience when attacking. (Special attack gives extra experience)
+        self.gain_experience(35)
 
 class Mage(Player):
     """
@@ -224,6 +242,9 @@ class Mage(Player):
         # Update and display stamina
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+
+        # Player gains experience when attacking.
+        self.gain_experience(17)
         
     def fireball(self, target):
         """
@@ -241,6 +262,9 @@ class Mage(Player):
 
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+
+        # Player gains experience when attacking. (Special attack gives extra experience)
+        self.gain_experience(30)
 
 class Rogue(Player):
     """
@@ -279,6 +303,9 @@ class Rogue(Player):
         # Update and display stamina
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+
+        # Player gains experience when attacking.
+        self.gain_experience(15)
         
     def sneak_attack(self, target):
         """
@@ -296,6 +323,9 @@ class Rogue(Player):
 
         self.stamina = max(0, self.stamina - stamina_cost)
         print(f"{self.name}'s stamina decreases by {stamina_cost}. (Remaining: {self.stamina})")
+
+        # Player gains experience when attacking. (Special attack gives extra experience)
+        self.gain_experience(27)
 
 
 class Weapon:
